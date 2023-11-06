@@ -1,0 +1,53 @@
+
+.header {
+    height: 86.5px;
+    padding: 0px 106px 0 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0, 0.4);
+    margin-bottom: 230px;
+}
+
+.header__options {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__options i {
+    color: #fff;
+}
+
+.toggler {
+    width: 47px;
+    height: 21px;
+    background: #E5E5E5;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 1px 0 1px;
+    position: relative;
+}
+
+.toggler__circle {
+    height: 19px;
+    width: 19px;
+    border-radius: 100%;
+    background-color: #000;
+    position: absolute;
+    right: 27px;
+    transition: 0.7s ease-in;
+}
+
+.toggler__circle_on {
+    right: 1px;
+    left: none;
+    transition: 0.7s ease-out;
+}
+
+.promo__logo {
+    width: 133px;
+    height: 37px;
+}
