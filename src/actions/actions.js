@@ -66,4 +66,78 @@ export const soonLoaded = (data) => {
 //     }
 // }
 
+export const seatsFetched = (payload) => {
+    return {
+        type: 'SEATS_FETCHED',
+        payload
+    }
+}
+
+export const changeDate = (payload) => {
+    return {
+        type: 'CHANGE_DATE',
+        payload
+    }
+}
+
+export const changeTime = (payload) => {
+    return {
+        type: 'CHANGE_TIME',
+        payload
+    }
+}
+
+export const addSeat = (payload) => {
+    return {
+        type: 'SEAT_ADD',
+        payload
+    }
+}
+
+export const removeSeat = (payload) => {
+    return {
+        type: 'SEAT_REMOVE',
+        payload
+    }
+}
+
+export const deleteAllSeats = () => {
+    return {
+        type: "ALL_SEATS_REMOVE"
+    }
+}
+
+export const formLoading = () => {
+    return {
+        type: "FORM_LOADING"
+    }
+}
+
+export const formShow = () => {
+    return {
+        type: "FORM_SHOW",
+    }
+}
+
+
+export const formError = () => {
+    return {
+        type: "FORM_ERROR"
+    }
+}
+
+
+export const formCongrats = () => {
+    return {
+        type: "FORM_CONGRATS"
+    }
+}
+
+export const formClear = (dispatch) => {
+    dispatch(deleteAllSeats())
+    return {
+        type: "FORM_CLEAR"
+    }
+}
+
 

@@ -20,26 +20,29 @@ const Promo = () => {
     useEffect(() => {
         dispatch(loadingSlides())
         getPlayingNow(1)
-        .then((data)=> dispatch(loadedSlides(data)))
+        .then((data)=>{ 
+            dispatch(loadedSlides(data))
+        })
         .catch(dispatch(errorSlides()))
     }, [])
 
-
+ 
 
     const sliderSettings = {
-        className: "center",
-        centerMode: true,
+        // className: "center",
         infinite: true,
-        slidesToShow: 6,
+        initialSlide: 15,
         speed: 500,
-        focusOnSelect: true,
         arrows: false,
+        focusOnSelect: true,
         adaptiveHeight: true,
-        variableWidth: true,
+        centerMode: true,
+        slidesToShow: 5,
+        centerPadding:'4.3vw',
         beforeChange: (oldI, newI) => {
             if (oldI === newI) {
                 return;
-            } else {
+            } else if (slidesInfo.slides[newI] !== undefined) {
                 setToggling(true)
                 dispatch(curSlide(newI))
                 setTimeout(() => {
@@ -48,8 +51,8 @@ const Promo = () => {
             }
         }
     }
-    console.log(slidesInfo)
-    const sliderItems = (slidesInfo.loadingStatus === 'idle' && slidesInfo.slides.length !== 0) ? slidesInfo.slides.map(item => <PromoLI name={item.title} image={item.poster_path} key={item.id}/>) : null 
+
+    const sliderItems = (slidesInfo.loadingStatus === 'idle' && slidesInfo.slides.length !== 0) ? slidesInfo.slides.map(item => <PromoLI name={item.title} image={item.poster_path} id={item.id} key={item.id}/>) : null 
     return (
         <div className="promo">
             <img className={`promo__back-drop ${toggling ? 'toggle' : null}`} src={slidesInfo.currentSlide} alt="back_drop" />

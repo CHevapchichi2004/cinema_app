@@ -16,16 +16,8 @@ const CurrentlyPlaying = () => {
         getPlayingNow(2).then(res => dispatch(loadedCurrent(res))).then(loadingErrCurrent())
     }, [])
 
-    console.log(curr.status)
-
 
     const view = (curr.status !== 'loading' && curr.current) ?  curr.current.map(item => <Card title={item.title} poster_path={item.poster_path} release={item.release_date} key={item.id}/>) : null
-    // let view = curr.map(item => <Card title={item.original_title} poster_path={item.poster_path} release={item.release_date} />)
-    // if (more && curr) {
-    //     view = curr.slice(0,4).map(item => <Card title={item.original_title} poster_path={item.poster_path} release={item.release_date} />)
-    // } else if (curr && !more) {
-    //     view = curr.map(item => <Card title={item.original_title} poster_path={item.poster_path} release={item.release_date} />)
-    // }
 
     return (
         <div className="cards">
@@ -35,7 +27,7 @@ const CurrentlyPlaying = () => {
                     console.log(more)
                 }} className="cards__more">
                     See more
-                    <i class="fa-solid fa-arrow-right"/>
+                    <i className="fa-solid fa-arrow-right"/>
                 </div>
                 <div className={'cards__wrapper' + ((more) ? ` cards__wrapper_all` : '')}>
                     {view}

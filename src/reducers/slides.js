@@ -11,7 +11,7 @@ const slideReducer = (state = initialState, action) => {
                 ...state,
                 slides: action.payload,
                 loadingStatus: 'idle',
-                currentSlide: action.payload[0].backdrop_path
+                currentSlide: action.payload[15].backdrop_path
             }
         case "SLIDES_LOADING":
             return {

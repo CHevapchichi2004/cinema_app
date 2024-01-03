@@ -1,16 +1,17 @@
+import { useState } from "react"
 
 
-const useHttp = () => {
-
-    const _makeRequset = async (url, method = 'GET') => {
-
+const useHttp = () => { 
+    const _makeRequset = async (url, method = 'GET', body) => {
         try {
             const  res = await fetch(url, {
-                method,
+                method: method,
                 headers: {
-                    accept: 'application/json',
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNGFiMThjNmE2MjBjZWFkNmRkNTViYzQ3NWYwNDY0MSIsInN1YiI6IjY1M2Q5NmQwYmMyY2IzMDEwYjRhZjg1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KbnMjQMI35XkZH9ZCr42PU4waON84Iwcp5aKfSxNbl0'
-                }
+                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNGFiMThjNmE2MjBjZWFkNmRkNTViYzQ3NWYwNDY0MSIsInN1YiI6IjY1M2Q5NmQwYmMyY2IzMDEwYjRhZjg1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.KbnMjQMI35XkZH9ZCr42PU4waON84Iwcp5aKfSxNbl0',
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: body
             })
 
             if(!res.ok) {
@@ -51,7 +52,22 @@ const useHttp = () => {
         return _changeData(res)
     }
 
-    return [getPlayingNow, getComingSoon]
+    const getMovieById = async (id) => {
+        const res = await _makeRequset(`https://api.themoviedb.org/3/movie/${id}?language=ru`)
+        return res
+    }
+
+    const getSeats = async (id) => {
+        const res = await _makeRequset(`http://localhost:8000/films/${id}`)
+        return res
+    }
+
+    const postOrder = async (body) => {
+        const res = await _makeRequset('http://localhost:8000/orders', 'POST', body)
+        return res
+    }
+
+    return [getPlayingNow, getComingSoon, getMovieById, getSeats, postOrder]
 }
 
 export default useHttp

@@ -1,0 +1,205 @@
+.buy {
+    display: flex;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.buy__poster {
+    background: #000;
+    width: 50vw;
+    /* height: 100%; */
+}
+
+.buy__img {
+    width: 100%;
+    height: 100%;
+}
+.buy__purchase {
+    background: #121212;
+    width: 50vw; 
+    height: 100%;
+    padding-top: 90px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow: auto visible; */
+
+}
+
+.buy__time {
+    display: inline-block;
+    min-height: 120px;
+    margin-top: 18px;
+    border-bottom: solid #323231 1px;
+    /* padding-bottom: 0px; */
+}
+
+.buy h2 {
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.buy__time-item {
+    width: 107px;
+    height: 42px;
+    background: #323231;
+    border-radius: 100px;
+    margin: 0 10px;
+
+
+    color: #EEE;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all
+}
+
+.buy__time-item:hover{
+    background: #8D090D;
+}
+
+.buy__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buy__date {
+    display: inline-block;
+    border-bottom: solid #323231 1px;
+    padding-bottom: 25px;
+}
+
+.buy__date-item {
+    height: 58px;
+    width: 40px;
+    background-color: #2B2B2B;
+    border-radius: 100px;
+    margin: 0 11px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #EEE;
+    font-size: 19px;
+    font-weight: 400;
+    transition: 0.5s all;
+}       
+.buy__date-item:hover {
+    background: #8D090D;
+}
+
+.buy__screen {
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 13px;
+}
+.buy__grad {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cinema__seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.cinema__arrow {
+    display: flex;
+    margin-top: 11px;
+}
+
+.cinema__seat {
+    width: 19px;
+    height: 19px;
+    border-radius: 100%;
+    margin: 0 6px;
+    transition: 0.2s all;
+}
+
+.cinema__seat:hover {
+    background:#8D090D;
+}
+
+.cinema__state {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26.5px;
+    padding: 0 22px;
+}
+
+.cinema__state-item {
+    display: flex;
+    align-items: center;
+
+    color: rgba(255, 255, 255, 0.87);
+
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.24px;
+}
+
+.circle {
+    width: 16px;
+    height: 16px; 
+    border-radius: 100%;
+    margin-right: 8px;
+}
+
+.available {
+    background: #A4A4A4;
+}
+.booked {
+    background: #393939;
+}
+
+.booked:hover {
+    background: #393939;
+}
+
+.selected {
+    background: #8D090D;
+}
+
+.letters {
+    position: absolute;
+    top: -3.2px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.letters h2 {
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 13px;
+}
+
+.letters_before {
+    left: -10px;
+}
+
+.letters_after {
+    right: -10px;
+}
+
+.letters_after h2 {
+    color: #4A4A4A;
+}

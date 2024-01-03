@@ -14,8 +14,9 @@
     object-fit: fill;
     filter: blur(3.5px);
 }
-.center {
-    padding-top: 0px;
+
+.slider-wrapper {
+    padding-top: 280px;
 }
 
 @keyframes toggleSlide {
